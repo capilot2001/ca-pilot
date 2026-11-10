@@ -11,7 +11,7 @@ from typing import Dict, List
 
 from . import config as cfg
 from .config import COMPANY
-from .models import Invoice
+from shared.models import Invoice
 
 
 @dataclass

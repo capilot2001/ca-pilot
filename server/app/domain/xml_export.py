@@ -31,7 +31,7 @@ from xml.sax.saxutils import escape
 from . import config as cfg
 from .config import COMPANY
 from .masters import collect_masters
-from .models import Invoice
+from shared.models import Invoice
 
 _DUTYHEAD = {"CGST": "Central Tax", "SGST/UTGST": "State Tax", "IGST": "Integrated Tax"}
 

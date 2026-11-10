@@ -25,7 +25,7 @@ from openpyxl.utils import get_column_letter
 from . import config as cfg
 from .config import COMPANY
 from .masters import collect_masters, registration_type
-from .models import Invoice
+from shared.models import Invoice
 
 _HEAD_FONT = Font(bold=True, color="FFFFFF")
 _HEAD_FILL = PatternFill("solid", fgColor="1F4E78")

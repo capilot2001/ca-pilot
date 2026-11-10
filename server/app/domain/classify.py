@@ -15,7 +15,7 @@ from collections import defaultdict
 
 from . import config as cfg
 from .config import COMPANY
-from .models import Invoice, JournalLine, Exception_, Assumption
+from shared.models import Invoice, JournalLine, Exception_, Assumption
 from .tax_heads import TAX_HEAD_RES
 # MIGRATION(A2/A5): hsn_rate_map is a reading-side function that lives with the
 # parser in the OCR service (moved in A3). classify re-parses inv.raw_text with

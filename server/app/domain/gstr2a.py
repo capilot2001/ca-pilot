@@ -18,7 +18,7 @@ from typing import Dict, List, Optional
 from openpyxl import load_workbook
 
 from .config import COMPANY, STATE_CODES, STATE_NAME_TO_CODE
-from .models import Invoice, LineItem, Assumption, Exception_, TaxBreakup
+from shared.models import Invoice, LineItem, Assumption, Exception_, TaxBreakup
 from .validate import state_code_from_gstin
 
 # Sheets that carry inward B2B supplies. Amendment/credit-note sheets are read

@@ -20,7 +20,7 @@ from typing import Dict, List
 
 from pydantic import BaseModel
 
-from .models import Invoice
+from shared.models import Invoice
 
 _TOLERANCE = 1.0
 

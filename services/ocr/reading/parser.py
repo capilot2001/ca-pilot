@@ -15,7 +15,7 @@ from typing import List, Optional
 # domain package. When the OCR service is split out, these move to a shared
 # kernel so services/ocr no longer depends on `app` (tracked in TODO.local.md).
 from app.domain.config import COMPANY, STATE_CODES, STATE_NAME_TO_CODE, fmt_rate
-from app.domain.models import Invoice, LineItem, Assumption, TaxBreakup
+from shared.models import Invoice, LineItem, Assumption, TaxBreakup
 from app.domain.validate import state_code_from_gstin
 from app.domain.tax_heads import TAX_HEAD_RES
 
