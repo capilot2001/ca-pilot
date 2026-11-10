@@ -1,0 +1,21 @@
+# Local dev topology for LedgerFlow v2.
+#
+# OCR runs IN-PROCESS inside `server` for the migration (ADR-0004 + Decision: in-process first),
+# so only one backend service appears here. The OCR service is split into its own container later
+# (still pre-queue). The `client` (Next.js) is added in Part B.
+#
+# Dockerfiles and env templates land in module A8 — until then this file documents the intended
+# wiring and will build once those exist.
+
+services:
+  server:
+    build: ./server
+    ports:
+      - "8000:8000"
+    # env_file:
+    #   - ./deploy/env/server.env.example   # created in A8
+    volumes:
+      - ledgerflow-db:/data                 # SQLite on a volume (A8)
+
+volumes:
+  ledgerflow-db:

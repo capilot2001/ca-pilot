@@ -1,0 +1,10 @@
+# server (core API) — runtime deps.
+# Minimal skeleton set; migration modules add more:
+#   A2 (domain/exporters): openpyxl, reportlab
+#   A3/A7 (in-process OCR): google-cloud-vision, google-genai / vertexai, pymupdf, numpy
+#   A5 (settings): pydantic-settings (already below)
+
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings

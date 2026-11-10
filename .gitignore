@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*-key.json
+*.key.json
+service-account*.json
+
+# Data (SQLite lives on a volume, never in the repo)
+*.db
+*.sqlite
+*.sqlite3
+/data/
+
+# Node / Next (client)
+node_modules/
+.next/
+dist/
+out/
+build/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

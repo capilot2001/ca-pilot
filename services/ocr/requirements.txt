@@ -1,0 +1,8 @@
+# services/ocr — extraction pipeline deps.
+# Populated in A3 when the reading pipeline moves over (logic unchanged from v1), e.g.:
+#   google-cloud-vision      # Vision OCR
+#   google-genai / vertexai  # Gemini reading
+#   pymupdf                  # PDF rasterization + text layer
+#   numpy                    # skew / clustering geometry
+#
+# For the migration OCR runs in-process inside `server`, so these also become server deps (A7).
