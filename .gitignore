@@ -18,9 +18,13 @@ service-account*.json
 
 # Data (SQLite lives on a volume, never in the repo)
 *.db
+*.db-wal
+*.db-shm
 *.sqlite
 *.sqlite3
 /data/
+# Local default DB path (server/data/); real deploys point LEDGERFLOW_DB at a volume.
+data/
 
 # Node / Next (client)
 node_modules/

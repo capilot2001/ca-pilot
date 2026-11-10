@@ -7,7 +7,10 @@ install:          ## Install backend deps
 	pip install -r server/requirements.txt
 
 dev:              ## Run the server locally (OCR in-process)
-	cd server && uvicorn app.main:app --reload --port 8000
+	# Three source roots on the path: repo root -> `shared`, server -> `app`,
+	# services/ocr -> `reading` (same scheme as pyproject's pytest pythonpath).
+	PYTHONPATH="$(CURDIR):$(CURDIR)/server:$(CURDIR)/services/ocr" \
+		uvicorn app.main:app --reload --port 8000
 
 test:             ## Run tests (added during migration)
 	pytest

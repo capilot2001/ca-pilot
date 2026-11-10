@@ -1,0 +1,16 @@
+# LedgerFlow v2 — tooling config.
+#
+# NOT an installable package. The monorepo runs its three source roots on the
+# import path rather than being pip-installed (ADR-0001, Decision: in-process
+# first). The three roots are:
+#
+#   .              -> `shared`   (the reading contract, shared/)
+#   server         -> `app`      (the core server, server/app/)
+#   services/ocr   -> `reading`  (the OCR reading pipeline, services/ocr/reading/)
+#
+# pytest puts them on sys.path via `pythonpath` below; the runtime does the same
+# via PYTHONPATH (see the Makefile `dev` target). Dockerfiles repeat it in A8.
+
+[tool.pytest.ini_options]
+pythonpath = [".", "server", "services/ocr"]
+testpaths = ["server", "services/ocr", "shared", "tests"]
