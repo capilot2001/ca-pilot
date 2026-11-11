@@ -1,23 +1,22 @@
-# server (core API) — runtime deps.
+# server (core API) — runtime deps, pinned to v1's proven versions (P5).
 #
 # In-process OCR (Decision: in-process first) means the server process also runs
-# the reading pipeline, so its deps are listed here too; when OCR is split into
-# its own service they move to services/ocr/requirements.txt alone.
+# the reading pipeline, so its deps are listed here too; when the OCR service is
+# split into its own deployable they live in services/ocr/requirements.txt alone.
 
 # --- API + config ---
-fastapi
-uvicorn[standard]
-pydantic
-pydantic-settings
+fastapi==0.128.8
+uvicorn[standard]==0.39.0
+python-multipart==0.0.20        # FastAPI UploadFile/File parsing (/extract, /import/gstr2a)
+pydantic==2.13.4
+pydantic-settings==2.9.1        # new in v2: infra config (app/settings.py)
 
-# --- domain exporters (A2) ---
-openpyxl
-reportlab
+# --- domain exporters ---
+openpyxl==3.1.5                 # Tally Excel templates
+reportlab==4.4.4                # GST reconciliation report as PDF
 
-# --- in-process OCR reading pipeline (A3/A7) ---
-google-cloud-vision
-google-genai
-google-auth
-pymupdf
-pillow
-numpy
+# --- in-process OCR reading pipeline ---
+PyMuPDF==1.26.5                 # digital-PDF text layer + rasterising scanned pages
+google-cloud-vision==3.14.0     # managed OCR for scans and images
+google-genai==1.47.0            # Gemini (Vertex AI) reads the page as a document
+Pillow==11.3.0                  # re-encode TIFF (Vision won't take it); downscale for Gemini

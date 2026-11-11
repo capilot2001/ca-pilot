@@ -1,8 +1,11 @@
-# services/ocr — extraction pipeline deps.
-# Populated in A3 when the reading pipeline moves over (logic unchanged from v1), e.g.:
-#   google-cloud-vision      # Vision OCR
-#   google-genai / vertexai  # Gemini reading
-#   pymupdf                  # PDF rasterization + text layer
-#   numpy                    # skew / clustering geometry
+# services/ocr — reading pipeline deps (logic unchanged from v1, pinned to v1).
 #
-# For the migration OCR runs in-process inside `server`, so these also become server deps (A7).
+# For the migration OCR runs IN-PROCESS inside `server`, so these are also
+# listed in server/requirements.txt. They live here alone once the OCR service
+# is split into its own deployable (post-migration).
+
+pydantic==2.13.4                # reading data models (LLMInvoice, shared.models)
+PyMuPDF==1.26.5                 # PDF rasterization + embedded text layer
+google-cloud-vision==3.14.0     # managed OCR for scans and images
+google-genai==1.47.0            # Gemini (Vertex AI) reads the page as a document
+Pillow==11.3.0                  # re-encode TIFF (Vision won't take it); downscale for Gemini
