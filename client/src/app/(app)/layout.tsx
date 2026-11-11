@@ -28,7 +28,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   if (isLoading || !isAuthenticated) {
     return (
-      <div className="grid h-dvh place-items-center text-sm text-muted">
+      <div
+        className="grid h-dvh place-items-center text-sm text-muted"
+        suppressHydrationWarning
+      >
         Loading…
       </div>
     );

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Loader2, RefreshCw, Upload } from "lucide-react";
+import { Loader2, RefreshCw, Sparkles, Upload } from "lucide-react";
+import { toast } from "sonner";
 
 import { ExportMenu } from "@/components/invoices/export-menu";
 import { ReconTable } from "@/components/reconcile/recon-table";
@@ -43,6 +44,12 @@ function Stat({
 export default function ReconcilePage() {
   const items = useBatch((s) => s.items);
   const add = useBatch((s) => s.add);
+  const clear = useBatch((s) => s.clear);
+  const loadSample = () => {
+    clear();
+    add(SAMPLE_INVOICES);
+    toast.success(`Loaded ${SAMPLE_INVOICES.length} sample invoices`);
+  };
   const invoices = useMemo(() => items.map((i) => i.invoice), [items]);
   const importer = useImportGstr2a();
   const reconcile = useReconcile();
@@ -99,6 +106,9 @@ export default function ReconcilePage() {
             )}
             Import GSTR-2A
           </Button>
+          <Button variant="outline" onClick={loadSample} title="Replace the session with offline demo data">
+            <Sparkles className="size-4" /> Load sample
+          </Button>
           {mounted && count > 0 && <ExportMenu invoices={invoices} />}
         </div>
       </div>
@@ -123,10 +133,7 @@ export default function ReconcilePage() {
             <Link href="/invoices/new" className={buttonClasses("primary")}>
               Add invoices
             </Link>
-            <button
-              onClick={() => add(SAMPLE_INVOICES)}
-              className={buttonClasses("outline")}
-            >
+            <button onClick={loadSample} className={buttonClasses("outline")}>
               Load sample data
             </button>
           </div>

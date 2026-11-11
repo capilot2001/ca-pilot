@@ -9,10 +9,13 @@ import {
   Scale,
   Search,
   Settings,
+  Sparkles,
   Trash2,
 } from "lucide-react";
+import { toast } from "sonner";
 
 import { useAuth } from "@/lib/auth/auth-context";
+import { SAMPLE_INVOICES } from "@/lib/sample-data";
 import { useBatch } from "@/lib/store/batch";
 import { useUI } from "@/lib/store/ui";
 import { cn } from "@/lib/utils";
@@ -30,6 +33,7 @@ export function CommandPalette() {
   const router = useRouter();
   const { logout } = useAuth();
   const clearBatch = useBatch((s) => s.clear);
+  const addBatch = useBatch((s) => s.add);
 
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
@@ -62,6 +66,17 @@ export function CommandPalette() {
         run: () => router.push("/settings"),
       },
       {
+        id: "sample",
+        label: "Load sample data (demo)",
+        icon: Sparkles,
+        run: () => {
+          clearBatch();
+          addBatch(SAMPLE_INVOICES);
+          toast.success(`Loaded ${SAMPLE_INVOICES.length} sample invoices`);
+          router.push("/invoices");
+        },
+      },
+      {
         id: "clear",
         label: "Clear this session's invoices",
         icon: Trash2,
@@ -74,7 +89,7 @@ export function CommandPalette() {
         run: () => logout(),
       },
     ],
-    [router, logout, clearBatch]
+    [router, logout, clearBatch, addBatch]
   );
 
   const filtered = useMemo(() => {

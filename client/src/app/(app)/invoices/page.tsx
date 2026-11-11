@@ -21,6 +21,7 @@ export default function InvoicesPage() {
   const [q, setQ] = useState("");
 
   function loadSample() {
+    clear();
     add(SAMPLE_INVOICES);
     toast.success(`Loaded ${SAMPLE_INVOICES.length} sample invoices`);
   }
@@ -51,6 +52,15 @@ export default function InvoicesPage() {
           )}
         </div>
         <div className="flex items-center gap-2">
+          {mounted && (
+            <button
+              onClick={loadSample}
+              className={buttonClasses("outline")}
+              title="Replace the session with offline demo data"
+            >
+              <Sparkles className="size-4" /> Load sample
+            </button>
+          )}
           {mounted && items.length > 0 && (
             <ExportMenu invoices={items.map((i) => i.invoice)} />
           )}
