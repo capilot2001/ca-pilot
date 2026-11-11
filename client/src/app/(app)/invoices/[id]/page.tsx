@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { InvoiceStatusPill } from "@/components/ui/status-pill";
 import type { Invoice, LineItem } from "@/lib/api";
+import { STATE_CODES, STATE_OPTIONS } from "@/lib/states";
 import { useRecompute } from "@/lib/invoice-mutations";
 import { useBatch } from "@/lib/store/batch";
 
@@ -25,6 +26,10 @@ function displayDate(iso: string): string {
   if (!m) return "";
   return `${Number(m[3])}-${MONTHS[Number(m[2]) - 1]}-${m[1]}`;
 }
+
+const REG_TYPES = ["Regular", "Composition", "Unregistered/Consumer"];
+const SELECT_CLS =
+  "h-10 w-full rounded-lg border border-border bg-surface px-3 text-sm text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 function Field({
   label,
@@ -165,6 +170,21 @@ export default function InvoiceDetailPage() {
                   }
                 />
               </Field>
+              <Field label="Registration type">
+                <select
+                  value={inv.party_registration_type || "Regular"}
+                  onChange={(e) =>
+                    patch({ party_registration_type: e.target.value })
+                  }
+                  className={SELECT_CLS}
+                >
+                  {REG_TYPES.map((r) => (
+                    <option key={r} value={r}>
+                      {r}
+                    </option>
+                  ))}
+                </select>
+              </Field>
               <Field label="Direction">
                 <select
                   value={inv.direction}
@@ -202,6 +222,39 @@ export default function InvoiceDetailPage() {
                   }
                 />
               </Field>
+              <Field label="Party state">
+                <select
+                  value={inv.party_state_code}
+                  onChange={(e) =>
+                    patch({
+                      party_state_code: e.target.value,
+                      party_state: STATE_CODES[e.target.value] ?? "",
+                    })
+                  }
+                  className={SELECT_CLS}
+                >
+                  <option value="">Choose a state</option>
+                  {STATE_OPTIONS.map((s) => (
+                    <option key={s.code} value={s.code}>
+                      {s.name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Party PIN code">
+                <Input
+                  value={inv.party_pincode}
+                  onChange={(e) => patch({ party_pincode: e.target.value })}
+                />
+              </Field>
+              <div className="sm:col-span-2">
+                <Field label="Party address">
+                  <Input
+                    value={inv.party_address}
+                    onChange={(e) => patch({ party_address: e.target.value })}
+                  />
+                </Field>
+              </div>
             </div>
           </section>
 
