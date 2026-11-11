@@ -1,6 +1,22 @@
-# assets
+# assets — sample invoices & Tally reference files
 
-Sample invoices and reference files (XLSX/XML references, sample PDFs/images) used for development
-and for the **parity gate (A9)** — running v1 and v2 on the same inputs and diffing the exports.
+Reference material for development and testing, copied from the v1 project (v1
+is left untouched). Not imported by the running code.
 
-These are moved over from `../v1-finance` during the migration (step 7 / module A8). Empty for now.
+## `sample-invoices/`
+Real sample bills for exercising the OCR + reading pipeline (extraction needs
+Google Cloud credentials — see `../deploy/env/server.env.example`).
+- `*.pdf`, `first.jpg`, `second.jpg` — assorted purchase / sales invoices.
+- `edge-cases/` — invoices that deliberately trip validations (invalid GSTIN,
+  missing registration / place-of-supply) to exercise the exception paths.
+
+## `gstr2a/`
+- `GSTR-2A-sample.xlsx` — a GSTR-2A workbook for the import + reconciliation flow
+  (parses offline; no cloud needed).
+
+## `tally-reference/`
+- `AccountingVouchers.xlsx`, `AllAccountingMasters.xlsx` — the TallyPrime import
+  templates the exporters target.
+- `tallyprime-excel-import-reference.md` — notes on the Tally Excel import format.
+
+Deployment and cost notes live in [`../docs/reference/`](../docs/reference/).

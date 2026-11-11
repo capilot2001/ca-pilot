@@ -59,9 +59,11 @@ item. See the per-phase lens in [summary.md](summary.md).
 - ☑ SQLite on a volume at `/data`; `LEDGERFLOW_DB` via settings.
 - ☑ Google credentials: ADC on Cloud Run; mounted-key path documented for other platforms.
 
-### 7. Reorganize stray assets/docs
-- ☐ Move sample invoices, xlsx/xml references, images → `assets/`.
-- ☐ Move deploy notes / cost estimates → `docs/` (or keep as reference under `docs/reference/`).
+### 7. Reorganize stray assets/docs — done
+- ☑ Sample invoices, xlsx/xml references, images → `assets/` (sample-invoices/
+  with edge-cases/, tally-reference/, gstr2a/). Copied from v1 (v1 untouched).
+- ☑ Deploy notes / cost estimates → `docs/reference/` (aws/gcp/deploy, cost
+  estimate PDF + PPTX).
 
 ---
 
