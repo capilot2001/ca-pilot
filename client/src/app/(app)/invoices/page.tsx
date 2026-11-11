@@ -2,20 +2,28 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { FileText, Plus, Upload } from "lucide-react";
+import { FileText, Plus, Sparkles, Upload } from "lucide-react";
+import { toast } from "sonner";
 
 import { ExportMenu } from "@/components/invoices/export-menu";
 import { InvoiceTable } from "@/components/invoices/invoice-table";
 import { buttonClasses, Kbd } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SAMPLE_INVOICES } from "@/lib/sample-data";
 import { useBatch } from "@/lib/store/batch";
 
 export default function InvoicesPage() {
   const items = useBatch((s) => s.items);
   const clear = useBatch((s) => s.clear);
+  const add = useBatch((s) => s.add);
   const [mounted, setMounted] = useState(false);
   const [q, setQ] = useState("");
+
+  function loadSample() {
+    add(SAMPLE_INVOICES);
+    toast.success(`Loaded ${SAMPLE_INVOICES.length} sample invoices`);
+  }
 
   // avoid a hydration flash: the batch rehydrates from sessionStorage on mount
   useEffect(() => setMounted(true), []);
@@ -78,7 +86,7 @@ export default function InvoicesPage() {
             ))}
           </div>
         ) : items.length === 0 ? (
-          <EmptyState />
+          <EmptyState onLoadSample={loadSample} />
         ) : filtered.length === 0 ? (
           <p className="px-6 py-16 text-center text-sm text-muted">
             No invoices match “{q}”.
@@ -91,7 +99,7 @@ export default function InvoicesPage() {
   );
 }
 
-function EmptyState() {
+function EmptyState({ onLoadSample }: { onLoadSample: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center gap-4 px-6 py-20 text-center">
       <span className="grid size-12 place-items-center rounded-full bg-brand-subtle text-brand">
@@ -104,9 +112,17 @@ function EmptyState() {
           live in this session only — nothing is saved between visits.
         </p>
       </div>
-      <Link href="/invoices/new" className={buttonClasses("primary")}>
-        <Upload className="size-4" /> Upload or create an invoice
-      </Link>
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        <Link href="/invoices/new" className={buttonClasses("primary")}>
+          <Upload className="size-4" /> Upload or create an invoice
+        </Link>
+        <button onClick={onLoadSample} className={buttonClasses("outline")}>
+          <Sparkles className="size-4" /> Load sample data
+        </button>
+      </div>
+      <p className="text-xs text-muted-2">
+        Sample data is offline demo content — no cloud or OCR needed.
+      </p>
     </div>
   );
 }

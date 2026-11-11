@@ -10,6 +10,7 @@ import { Button, buttonClasses } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { ReconSummary } from "@/lib/api";
 import { useImportGstr2a, useReconcile } from "@/lib/invoice-mutations";
+import { SAMPLE_INVOICES } from "@/lib/sample-data";
 import { useBatch } from "@/lib/store/batch";
 import { cn, formatInr } from "@/lib/utils";
 
@@ -41,6 +42,7 @@ function Stat({
 
 export default function ReconcilePage() {
   const items = useBatch((s) => s.items);
+  const add = useBatch((s) => s.add);
   const invoices = useMemo(() => items.map((i) => i.invoice), [items]);
   const importer = useImportGstr2a();
   const reconcile = useReconcile();
@@ -117,12 +119,17 @@ export default function ReconcilePage() {
             Add purchase invoices (upload or enter them), then import the GSTR-2A
             workbook to compare.
           </p>
-          <Link
-            href="/invoices/new"
-            className={cn(buttonClasses("primary"), "mt-4")}
-          >
-            Add invoices
-          </Link>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            <Link href="/invoices/new" className={buttonClasses("primary")}>
+              Add invoices
+            </Link>
+            <button
+              onClick={() => add(SAMPLE_INVOICES)}
+              className={buttonClasses("outline")}
+            >
+              Load sample data
+            </button>
+          </div>
         </div>
       ) : (
         <div className="space-y-5">
