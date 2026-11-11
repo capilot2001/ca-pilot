@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowLeft, PencilLine, Upload } from "lucide-react";
 
+import { ManualInvoiceForm } from "@/components/invoices/manual-invoice-form";
 import { UploadDropzone } from "@/components/invoices/upload-dropzone";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +14,7 @@ export default function NewInvoicePage() {
   const [mode, setMode] = useState<Mode | null>(null);
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
+    <div className="mx-auto max-w-4xl space-y-6">
       <div className="space-y-1">
         <Link
           href="/invoices"
@@ -39,7 +40,6 @@ export default function NewInvoicePage() {
             icon={<PencilLine className="size-5" />}
             title="Enter manually"
             body="Fill in the customer, line items and GST — the tax total is computed for you."
-            note="Coming next"
             onClick={() => setMode("manual")}
           />
         </div>
@@ -65,9 +65,7 @@ export default function NewInvoicePage() {
           >
             <ArrowLeft className="size-4" /> Choose a different way
           </button>
-          <div className="rounded-xl border border-border bg-surface px-6 py-12 text-center text-sm text-muted">
-            Manual entry is coming next (P3).
-          </div>
+          <ManualInvoiceForm />
         </div>
       )}
     </div>

@@ -27,6 +27,8 @@ function Cell(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
       {...props}
+      // select on focus so typing replaces the value rather than appending
+      onFocus={(e) => e.target.select()}
       className={cn(
         "h-9 w-full bg-transparent px-2 text-sm text-fg outline-none",
         "focus:bg-brand-subtle/40",
