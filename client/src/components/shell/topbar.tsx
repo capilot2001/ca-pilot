@@ -1,15 +1,29 @@
 "use client";
 
-import { Search } from "lucide-react";
-import { Kbd } from "@/components/ui/button";
+import { Menu, Search } from "lucide-react";
 
-/** Top bar: command-palette search affordance + shortcuts hint.
- *  The palette itself is wired in a later phase; this matches the reference look. */
+import { Kbd } from "@/components/ui/button";
+import { useUI } from "@/lib/store/ui";
+
+/** Top bar: mobile menu toggle, command-palette search, shortcuts hint. */
 export function Topbar() {
+  const setPaletteOpen = useUI((s) => s.setPaletteOpen);
+  const setSidebarOpen = useUI((s) => s.setSidebarOpen);
+
   return (
-    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border bg-surface px-6">
+    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border bg-surface px-4 sm:px-6">
       <button
         type="button"
+        onClick={() => setSidebarOpen(true)}
+        className="rounded-lg p-1.5 text-muted hover:bg-surface-muted md:hidden"
+        aria-label="Open menu"
+      >
+        <Menu className="size-5" />
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setPaletteOpen(true)}
         className="flex h-9 w-full max-w-md items-center gap-2 rounded-lg border border-border bg-surface-muted px-3 text-sm text-muted-2 hover:bg-surface"
         aria-label="Search or jump to"
       >
@@ -20,7 +34,10 @@ export function Topbar() {
           <Kbd>K</Kbd>
         </span>
       </button>
-      <span className="ml-auto text-sm text-muted-2">Shortcuts ?</span>
+
+      <span className="ml-auto hidden text-sm text-muted-2 sm:block">
+        Shortcuts ?
+      </span>
     </header>
   );
 }

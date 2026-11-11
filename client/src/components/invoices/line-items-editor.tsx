@@ -52,7 +52,15 @@ export function LineItemsEditor({
     onChange(items.filter((_, i) => i !== idx));
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border">
+    <div
+      className="overflow-hidden rounded-xl border border-border"
+      onKeyDown={(e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+          e.preventDefault();
+          addLine();
+        }
+      }}
+    >
       <div className="overflow-x-auto">
         <table className="w-full min-w-[720px] text-sm">
           <thead>
@@ -164,12 +172,19 @@ export function LineItemsEditor({
           </tbody>
         </table>
       </div>
-      <button
-        onClick={addLine}
-        className="flex w-full items-center gap-1.5 border-t border-border px-3 py-2.5 text-sm font-medium text-brand hover:bg-surface-muted"
-      >
-        <Plus className="size-4" /> Add line
-      </button>
+      <div className="flex items-center gap-3 border-t border-border px-3 py-2.5">
+        <button
+          onClick={addLine}
+          className="flex items-center gap-1.5 text-sm font-medium text-brand hover:underline"
+        >
+          <Plus className="size-4" /> Add line
+        </button>
+        <span className="hidden text-xs text-muted-2 sm:inline">
+          <kbd className="rounded bg-surface-muted px-1 py-0.5">Ctrl</kbd>+
+          <kbd className="rounded bg-surface-muted px-1 py-0.5">Enter</kbd> adds a
+          line
+        </span>
+      </div>
     </div>
   );
 }
