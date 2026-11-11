@@ -15,8 +15,10 @@ from __future__ import annotations
 
 from functools import lru_cache
 
+from .adapters.extraction.in_process import InProcessExtractor
 from .adapters.persistence.sqlite_client_repo import SqliteClientRepo
 from .ports.client_repository import ClientRepository
+from .ports.invoice_extractor import InvoiceExtractor
 from .settings import Settings
 
 
@@ -32,3 +34,20 @@ def get_client_repo() -> ClientRepository:
     matching v1's single ``store`` module. The DB path comes from settings so the
     adapter stays free of environment lookups."""
     return SqliteClientRepo(db_path=get_settings().ledgerflow_db)
+
+
+@lru_cache
+def get_extractor() -> InvoiceExtractor:
+    """The invoice extractor, selected by ``OCR_MODE`` (ADR-0004).
+
+    "in_process" (the Phase-0 default, Decision: in-process first) runs the OCR
+    reading pipeline inside this server. "http" would call a split-out OCR
+    service at ``ocr_service_url`` — that adapter arrives when the service is
+    actually split (post-migration), so it raises a clear error until then
+    rather than pretend to exist."""
+    mode = get_settings().ocr_mode
+    if mode == "in_process":
+        return InProcessExtractor()
+    raise NotImplementedError(
+        f"OCR_MODE={mode!r} is not available yet; the only Phase-0 extractor is "
+        f"'in_process'. The HTTP extractor lands when the OCR service is split out.")
