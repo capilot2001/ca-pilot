@@ -1,0 +1,67 @@
+{
+  "books_count": 3,
+  "books_tax_total": 510.0,
+  "gstr2a_count": 0,
+  "gstr2a_tax_total": 0.0,
+  "itc_at_risk": 510.0,
+  "lines": [
+    {
+      "books_tax": 90.0,
+      "books_taxable": 500.0,
+      "diffs": [
+        "Absent from GSTR-2A (books \u20b990.00)",
+        "ITC \u20b990.00 unsupported"
+      ],
+      "gstr2a_tax": 0.0,
+      "gstr2a_taxable": 0.0,
+      "invoice_date": "2024-05-10",
+      "invoice_number": "P-100",
+      "party_gstin": "09ABCDE1234F1ZY",
+      "party_name": "UP Steel Supplies",
+      "remark": "Purchase invoice not uploaded by the supplier in GSTR-2A. ITC not reflected \u2014 follow up before claiming.",
+      "status": "only_in_books",
+      "tax_diff": 90.0,
+      "taxable_diff": 500.0
+    },
+    {
+      "books_tax": 0.0,
+      "books_taxable": 6000.0,
+      "diffs": [
+        "Absent from GSTR-2A (books \u20b90.00)",
+        "ITC \u20b90.00 unsupported"
+      ],
+      "gstr2a_tax": 0.0,
+      "gstr2a_taxable": 0.0,
+      "invoice_date": "2024-06-20",
+      "invoice_number": "P-300",
+      "party_gstin": "21DAIRY6789K1ZN",
+      "party_name": "Fresh Dairy",
+      "remark": "Purchase invoice not uploaded by the supplier in GSTR-2A. ITC not reflected \u2014 follow up before claiming.",
+      "status": "only_in_books",
+      "tax_diff": 0.0,
+      "taxable_diff": 6000.0
+    },
+    {
+      "books_tax": 420.0,
+      "books_taxable": 3500.0,
+      "diffs": [
+        "Absent from GSTR-2A (books \u20b9420.00)",
+        "ITC \u20b9420.00 unsupported"
+      ],
+      "gstr2a_tax": 0.0,
+      "gstr2a_taxable": 0.0,
+      "invoice_date": "2024-06-01",
+      "invoice_number": "P-200",
+      "party_gstin": "21PQRSX6789K1Z4",
+      "party_name": "Odisha Traders",
+      "remark": "Purchase invoice not uploaded by the supplier in GSTR-2A. ITC not reflected \u2014 follow up before claiming.",
+      "status": "only_in_books",
+      "tax_diff": 420.0,
+      "taxable_diff": 3500.0
+    }
+  ],
+  "matched": 0,
+  "only_in_2a": 0,
+  "only_in_books": 3,
+  "value_mismatch": 0
+}

@@ -1,0 +1,1122 @@
+{
+  "Ledger": [
+    [
+      "Name",
+      "Group Name",
+      "Mailing Name",
+      "Address",
+      "State",
+      "Country",
+      "Pincode",
+      "Ledger - Opening Balance",
+      "Ledger Opening Balance - Dr/Cr",
+      "Maintain balances bill-by-bill",
+      "GST Applicability",
+      "HSN/SAC - Applicable From",
+      "HSN/SAC Details",
+      "HSN/SAC",
+      "HSN Description",
+      "GST Rate - Applicable From",
+      "GST Rate Details",
+      "GST - Taxability Type",
+      "IGST Rate",
+      "CGST Rate",
+      "SGST/UTGST Rate",
+      "Type of Supply",
+      "Type of Duty/Tax ",
+      "Tax Type (GST)",
+      "GST Registration - Applicable From",
+      "GST Registration Type",
+      "GST Registration - Assessee of Other Territory",
+      "GST Registration - GSTIN/UIN",
+      "Place of Supply (for Outwards)",
+      "Type of Ledger"
+    ],
+    [
+      "UP Steel Supplies",
+      "Sundry Creditors",
+      "UP Steel Supplies",
+      "Industrial Area, Kanpur",
+      "Uttar Pradesh",
+      "India",
+      "208001",
+      null,
+      null,
+      "No",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "2024-04-01 00:00:00",
+      "Regular",
+      "No",
+      "09ABCDE1234F1ZY",
+      "Odisha",
+      null
+    ],
+    [
+      "Odisha Traders",
+      "Sundry Creditors",
+      "Odisha Traders",
+      "Main Road, Cuttack",
+      "Odisha",
+      "India",
+      "753001",
+      null,
+      null,
+      "No",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "2024-04-01 00:00:00",
+      "Regular",
+      "No",
+      "21PQRSX6789K1Z4",
+      "Odisha",
+      null
+    ],
+    [
+      "Mumbai Retail Pvt Ltd",
+      "Sundry Debtors",
+      "Mumbai Retail Pvt Ltd",
+      "Andheri East, Mumbai",
+      "Maharashtra",
+      "India",
+      "400069",
+      null,
+      null,
+      "No",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "2024-04-01 00:00:00",
+      "Regular",
+      "No",
+      "27LMNOP4321Q1Z4",
+      "Maharashtra",
+      null
+    ],
+    [
+      "Fresh Dairy",
+      "Sundry Creditors",
+      "Fresh Dairy",
+      "Milk Colony, Sambalpur",
+      "Odisha",
+      "India",
+      "768001",
+      null,
+      null,
+      "No",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "2024-04-01 00:00:00",
+      "Regular",
+      "No",
+      "21DAIRY6789K1ZN",
+      "Odisha",
+      null
+    ],
+    [
+      "Purchase GST 18%",
+      "Purchase Accounts",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Applicable",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Goods",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Purchase GST 12%",
+      "Purchase Accounts",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Applicable",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Goods",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Sales GST 5%",
+      "Sales Accounts",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Applicable",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Goods",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Purchase exempted",
+      "Purchase Accounts",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Applicable",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Goods",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Input IGST",
+      "Duties & Taxes",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "GST",
+      "IGST",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Input CGST",
+      "Duties & Taxes",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "GST",
+      "CGST",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Input SGST",
+      "Duties & Taxes",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "GST",
+      "SGST/UTGST",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Output IGST",
+      "Duties & Taxes",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "GST",
+      "IGST",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  ],
+  "Mapping Template": [
+    [
+      "TallyPrime mapping template \u2014 build this once, reuse every import",
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Worksheet: Unit",
+      null,
+      null,
+      null
+    ],
+    [
+      "Alt+O (Import) \u2192 Manage \u2192 Mapping Templates \u2192 MASTERS \u2192 Create",
+      null,
+      null,
+      null
+    ],
+    [
+      "Type of Master",
+      "Unit",
+      null,
+      null
+    ],
+    [
+      "Save Mapping Template for",
+      "This Company",
+      null,
+      null
+    ],
+    [
+      "Excel Data has column headers",
+      "Yes",
+      null,
+      null
+    ],
+    [
+      "Row no. for column headers",
+      1,
+      null,
+      null
+    ],
+    [
+      "Import Data from row",
+      2,
+      "to",
+      "(blank = last row with data)"
+    ],
+    [
+      "Import Data from column",
+      "A",
+      "to",
+      "E"
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Field (TallyPrime)",
+      "Column Header (Excel)",
+      "Column (Excel)",
+      "Fixed Value"
+    ],
+    [
+      "Symbol",
+      "Symbol",
+      "A",
+      null
+    ],
+    [
+      "Formal Name",
+      "Formal Name",
+      "B",
+      null
+    ],
+    [
+      "Unit Quantity Code (UQC)",
+      "Unit Quantity Code (UQC)",
+      "C",
+      null
+    ],
+    [
+      "Type",
+      "Type",
+      "D",
+      null
+    ],
+    [
+      "Decimal Places",
+      "Decimal Places",
+      "E",
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Worksheet: Ledger",
+      null,
+      null,
+      null
+    ],
+    [
+      "Alt+O (Import) \u2192 Manage \u2192 Mapping Templates \u2192 MASTERS \u2192 Create",
+      null,
+      null,
+      null
+    ],
+    [
+      "Type of Master",
+      "Ledger",
+      null,
+      null
+    ],
+    [
+      "Save Mapping Template for",
+      "This Company",
+      null,
+      null
+    ],
+    [
+      "Excel Data has column headers",
+      "Yes",
+      null,
+      null
+    ],
+    [
+      "Row no. for column headers",
+      1,
+      null,
+      null
+    ],
+    [
+      "Import Data from row",
+      2,
+      "to",
+      "(blank = last row with data)"
+    ],
+    [
+      "Import Data from column",
+      "A",
+      "to",
+      "AD"
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Field (TallyPrime)",
+      "Column Header (Excel)",
+      "Column (Excel)",
+      "Fixed Value"
+    ],
+    [
+      "Name",
+      "Name",
+      "A",
+      null
+    ],
+    [
+      "Group Name",
+      "Group Name",
+      "B",
+      null
+    ],
+    [
+      "Mailing Name",
+      "Mailing Name",
+      "C",
+      null
+    ],
+    [
+      "Address",
+      "Address",
+      "D",
+      null
+    ],
+    [
+      "State",
+      "State",
+      "E",
+      null
+    ],
+    [
+      "Country",
+      "Country",
+      "F",
+      null
+    ],
+    [
+      "Pincode",
+      "Pincode",
+      "G",
+      null
+    ],
+    [
+      "Ledger - Opening Balance",
+      "Ledger - Opening Balance",
+      "H",
+      null
+    ],
+    [
+      "Ledger Opening Balance - Dr/Cr",
+      "Ledger Opening Balance - Dr/Cr",
+      "I",
+      null
+    ],
+    [
+      "Maintain balances bill-by-bill",
+      "Maintain balances bill-by-bill",
+      "J",
+      null
+    ],
+    [
+      "GST Applicability",
+      "GST Applicability",
+      "K",
+      null
+    ],
+    [
+      "HSN/SAC - Applicable From",
+      "HSN/SAC - Applicable From",
+      "L",
+      null
+    ],
+    [
+      "HSN/SAC Details",
+      "HSN/SAC Details",
+      "M",
+      null
+    ],
+    [
+      "HSN/SAC",
+      "HSN/SAC",
+      "N",
+      null
+    ],
+    [
+      "HSN Description",
+      "HSN Description",
+      "O",
+      null
+    ],
+    [
+      "GST Rate - Applicable From",
+      "GST Rate - Applicable From",
+      "P",
+      null
+    ],
+    [
+      "GST Rate Details",
+      "GST Rate Details",
+      "Q",
+      null
+    ],
+    [
+      "GST - Taxability Type",
+      "GST - Taxability Type",
+      "R",
+      null
+    ],
+    [
+      "IGST Rate",
+      "IGST Rate",
+      "S",
+      null
+    ],
+    [
+      "CGST Rate",
+      "CGST Rate",
+      "T",
+      null
+    ],
+    [
+      "SGST/UTGST Rate",
+      "SGST/UTGST Rate",
+      "U",
+      null
+    ],
+    [
+      "Type of Supply",
+      "Type of Supply",
+      "V",
+      null
+    ],
+    [
+      "Type of Duty/Tax",
+      "Type of Duty/Tax ",
+      "W",
+      null
+    ],
+    [
+      "Tax Type (GST)",
+      "Tax Type (GST)",
+      "X",
+      null
+    ],
+    [
+      "GST Registration - Applicable From",
+      "GST Registration - Applicable From",
+      "Y",
+      null
+    ],
+    [
+      "GST Registration Type",
+      "GST Registration Type",
+      "Z",
+      null
+    ],
+    [
+      "GST Registration - Assessee of Other Territory",
+      "GST Registration - Assessee of Other Territory",
+      "AA",
+      null
+    ],
+    [
+      "GST Registration - GSTIN/UIN",
+      "GST Registration - GSTIN/UIN",
+      "AB",
+      null
+    ],
+    [
+      "Place of Supply (for Outwards)",
+      "Place of Supply (for Outwards)",
+      "AC",
+      null
+    ],
+    [
+      "Type of Ledger",
+      "Type of Ledger",
+      "AD",
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Worksheet: Stock Item",
+      null,
+      null,
+      null
+    ],
+    [
+      "Alt+O (Import) \u2192 Manage \u2192 Mapping Templates \u2192 MASTERS \u2192 Create",
+      null,
+      null,
+      null
+    ],
+    [
+      "Type of Master",
+      "Stock Item",
+      null,
+      null
+    ],
+    [
+      "Save Mapping Template for",
+      "This Company",
+      null,
+      null
+    ],
+    [
+      "Excel Data has column headers",
+      "Yes",
+      null,
+      null
+    ],
+    [
+      "Row no. for column headers",
+      1,
+      null,
+      null
+    ],
+    [
+      "Import Data from row",
+      2,
+      "to",
+      "(blank = last row with data)"
+    ],
+    [
+      "Import Data from column",
+      "A",
+      "to",
+      "O"
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Field (TallyPrime)",
+      "Column Header (Excel)",
+      "Column (Excel)",
+      "Fixed Value"
+    ],
+    [
+      "Name",
+      "Name",
+      "A",
+      null
+    ],
+    [
+      "Under",
+      "Under",
+      "B",
+      null
+    ],
+    [
+      "Units",
+      "Units",
+      "C",
+      null
+    ],
+    [
+      "GST Applicability",
+      "GST Applicability",
+      "D",
+      null
+    ],
+    [
+      "HSN/SAC - Applicable From",
+      "HSN/SAC - Applicable From",
+      "E",
+      null
+    ],
+    [
+      "HSN/SAC Details",
+      "HSN/SAC Details",
+      "F",
+      null
+    ],
+    [
+      "HSN/SAC",
+      "HSN/SAC",
+      "G",
+      null
+    ],
+    [
+      "HSN Description",
+      "HSN Description",
+      "H",
+      null
+    ],
+    [
+      "GST Rate - Applicable From",
+      "GST Rate - Applicable From",
+      "I",
+      null
+    ],
+    [
+      "GST Rate Details",
+      "GST Rate Details",
+      "J",
+      null
+    ],
+    [
+      "GST - Taxability Type",
+      "GST - Taxability Type",
+      "K",
+      null
+    ],
+    [
+      "IGST Rate",
+      "IGST Rate",
+      "L",
+      null
+    ],
+    [
+      "CGST Rate",
+      "CGST Rate",
+      "M",
+      null
+    ],
+    [
+      "SGST/UTGST Rate",
+      "SGST/UTGST Rate",
+      "N",
+      null
+    ],
+    [
+      "Type of Supply",
+      "Type of Supply",
+      "O",
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "Import in this order: Unit, then Ledger, then Stock Item \u2014 a stock item whose Unit does not exist yet is rejected.",
+      null,
+      null,
+      null
+    ],
+    [
+      "Import all of this workbook BEFORE the vouchers workbook: a voucher naming a ledger or stock item that does not exist fails.",
+      null,
+      null,
+      null
+    ],
+    [
+      "Alt+O \u2192 Import \u2192 Masters, then set 'Behaviour of Import if Masters already exists' before running, and use Preview Import Summary first.",
+      null,
+      null,
+      null
+    ],
+    [
+      "Every 'Applicable From' date in this workbook is 1 April of the financial year the batch's earliest invoice falls in. GST rates and HSN codes are notified per financial year, and a block dated after a voucher makes Tally resolve that voucher's rate to 0% without saying so \u2014 next year's batch adds its own 1 April block alongside this one.",
+      null,
+      null,
+      null
+    ]
+  ],
+  "Stock Item": [
+    [
+      "Name",
+      "Under",
+      "Units",
+      "GST Applicability",
+      "HSN/SAC - Applicable From",
+      "HSN/SAC Details",
+      "HSN/SAC",
+      "HSN Description",
+      "GST Rate - Applicable From",
+      "GST Rate Details",
+      "GST - Taxability Type",
+      "IGST Rate",
+      "CGST Rate",
+      "SGST/UTGST Rate",
+      "Type of Supply"
+    ],
+    [
+      "Steel Rod 12mm",
+      "Primary",
+      "Kgs",
+      "Applicable",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "7213",
+      "Steel Rod 12mm",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "Taxable",
+      18,
+      9,
+      9,
+      "Goods"
+    ],
+    [
+      "Cotton Bag",
+      "Primary",
+      "Nos",
+      "Applicable",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "4202",
+      "Cotton Bag",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "Taxable",
+      12,
+      6,
+      6,
+      "Goods"
+    ],
+    [
+      "Jute Roll",
+      "Primary",
+      "Rol",
+      "Applicable",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "5310",
+      "Jute Roll",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "Taxable",
+      12,
+      6,
+      6,
+      "Goods"
+    ],
+    [
+      "Rice Bag 25kg",
+      "Primary",
+      "Bag",
+      "Applicable",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "1006",
+      "Rice Bag 25kg",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "Taxable",
+      5,
+      2.5,
+      2.5,
+      "Goods"
+    ],
+    [
+      "Fresh Milk",
+      "Primary",
+      "Ltr",
+      "Applicable",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "0401",
+      "Fresh Milk",
+      "2024-04-01 00:00:00",
+      "Specify Details Here",
+      "Exempt",
+      0,
+      0,
+      0,
+      "Goods"
+    ]
+  ],
+  "Unit": [
+    [
+      "Symbol",
+      "Formal Name",
+      "Unit Quantity Code (UQC)",
+      "Type",
+      "Decimal Places"
+    ],
+    [
+      "Kgs",
+      "KILOGRAMS",
+      "KGS-KILOGRAMS",
+      "Simple",
+      4
+    ],
+    [
+      "Nos",
+      "NUMBERS",
+      "NOS-NUMBERS",
+      "Simple",
+      4
+    ],
+    [
+      "Rol",
+      "ROLLS",
+      "ROL-ROLLS",
+      "Simple",
+      4
+    ],
+    [
+      "Bag",
+      "BAGS",
+      "BAG-BAGS",
+      "Simple",
+      4
+    ],
+    [
+      "Ltr",
+      "LITRES",
+      "LTR-LITRES",
+      "Simple",
+      4
+    ]
+  ]
+}
