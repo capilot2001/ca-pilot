@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { FileText, Plus, Upload } from "lucide-react";
 
+import { ExportMenu } from "@/components/invoices/export-menu";
 import { InvoiceTable } from "@/components/invoices/invoice-table";
 import { buttonClasses, Kbd } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,10 +42,15 @@ export default function InvoicesPage() {
             </span>
           )}
         </div>
-        <Link href="/invoices/new" className={buttonClasses("primary")}>
-          <Plus className="size-4" /> New invoice
-          <Kbd tone="onBrand">s</Kbd>
-        </Link>
+        <div className="flex items-center gap-2">
+          {mounted && items.length > 0 && (
+            <ExportMenu invoices={items.map((i) => i.invoice)} />
+          )}
+          <Link href="/invoices/new" className={buttonClasses("primary")}>
+            <Plus className="size-4" /> New invoice
+            <Kbd tone="onBrand">s</Kbd>
+          </Link>
+        </div>
       </div>
 
       <div className="rounded-xl border border-border bg-surface">

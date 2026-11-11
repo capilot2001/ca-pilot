@@ -7,6 +7,7 @@ import { ArrowLeft, RefreshCw, Trash2 } from "lucide-react";
 
 import { DocumentViewer } from "@/components/invoices/document-viewer";
 import { ExceptionsPanel } from "@/components/invoices/exceptions-panel";
+import { ExportMenu } from "@/components/invoices/export-menu";
 import { JournalPreview } from "@/components/invoices/journal-preview";
 import { LineItemsEditor } from "@/components/invoices/line-items-editor";
 import { TaxSummary } from "@/components/invoices/tax-summary";
@@ -113,6 +114,7 @@ export default function InvoiceDetailPage() {
             )}
           </div>
           <div className="flex items-center gap-2">
+            <ExportMenu invoices={[inv]} />
             <Button
               variant="outline"
               size="sm"

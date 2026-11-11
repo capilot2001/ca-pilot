@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 import * as api from "@/lib/api";
-import type { Invoice } from "@/lib/api";
+import type { ExportKind, Invoice } from "@/lib/api";
 import { reviewStatus } from "@/components/ui/status-pill";
 import { useBatch } from "@/lib/store/batch";
 
@@ -28,6 +28,20 @@ export function useExtract() {
         );
       }
     },
+  });
+}
+
+/** Download a Tally export for the current batch. */
+export function useExport() {
+  return useMutation({
+    mutationFn: ({
+      kind,
+      invoices,
+    }: {
+      kind: ExportKind;
+      invoices: Invoice[];
+    }) => api.downloadExport(kind, invoices),
+    onSuccess: () => toast.success("Download started"),
   });
 }
 
