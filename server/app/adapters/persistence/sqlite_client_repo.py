@@ -19,8 +19,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
 
+from app.domain.clients import fill_state_code as _fill_state_code
 from app.domain.config import COMPANY, CompanyConfig, STATE_CODES
-from app.domain.validate import state_code_from_gstin, validate_gstin
+from app.domain.validate import validate_gstin
 from app.ports.client_repository import DuplicateGSTIN
 
 # Columns that mirror CompanyConfig, in the order the UI shows them.
@@ -61,25 +62,6 @@ def _now() -> str:
 # ---------------------------------------------------------------------------
 # helpers (pure — no DB / self state)
 # ---------------------------------------------------------------------------
-def _fill_state_code(d: Dict) -> Dict:
-    """A blank State code, filled from the GSTIN that already states it.
-
-    A GSTIN's first two digits ARE the registration's state code, so leaving
-    the field empty on the client form is a typo the record can correct itself
-    — and an expensive one to leave standing: COMPANY.state derives from it, so
-    a blank propagates into place of supply and nature of transaction, and
-    EVERY invoice for that client fails import with "Place of Supply is not
-    specified" / "Taxability Type could not be determined". Applied on the way
-    in and on the way out, so a row already saved blank is repaired on read
-    without a migration.
-    """
-    if not str(d.get("state_code") or "").strip():
-        derived = state_code_from_gstin(str(d.get("gstin") or "").strip().upper())
-        if derived:
-            d = {**d, "state_code": derived}
-    return d
-
-
 def _values(d: dict) -> tuple:
     d = _fill_state_code(d)
     return tuple(

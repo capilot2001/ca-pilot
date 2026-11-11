@@ -1,10 +1,23 @@
 # server (core API) — runtime deps.
-# Minimal skeleton set; migration modules add more:
-#   A2 (domain/exporters): openpyxl, reportlab
-#   A3/A7 (in-process OCR): google-cloud-vision, google-genai / vertexai, pymupdf, numpy
-#   A5 (settings): pydantic-settings (already below)
+#
+# In-process OCR (Decision: in-process first) means the server process also runs
+# the reading pipeline, so its deps are listed here too; when OCR is split into
+# its own service they move to services/ocr/requirements.txt alone.
 
+# --- API + config ---
 fastapi
 uvicorn[standard]
 pydantic
 pydantic-settings
+
+# --- domain exporters (A2) ---
+openpyxl
+reportlab
+
+# --- in-process OCR reading pipeline (A3/A7) ---
+google-cloud-vision
+google-genai
+google-auth
+pymupdf
+pillow
+numpy
