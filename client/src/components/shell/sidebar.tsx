@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FileText, LogOut, Plus, Receipt, Settings } from "lucide-react";
+import { FileText, LogOut, Plus, Receipt, Scale, Settings } from "lucide-react";
 
 import { buttonClasses, Kbd } from "@/components/ui/button";
 import { CompanySwitcher } from "@/components/shell/company-switcher";
@@ -10,7 +10,10 @@ import { useAuth } from "@/lib/auth/auth-context";
 import { useUI } from "@/lib/store/ui";
 import { cn } from "@/lib/utils";
 
-const NAV = [{ href: "/invoices", label: "Invoices", icon: FileText }] as const;
+const NAV = [
+  { href: "/invoices", label: "Invoices", icon: FileText },
+  { href: "/reconcile", label: "Reconcile", icon: Scale },
+] as const;
 
 export function Sidebar() {
   const pathname = usePathname();

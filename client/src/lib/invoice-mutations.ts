@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 import * as api from "@/lib/api";
-import type { ExportKind, Invoice } from "@/lib/api";
+import type { ExportKind, Invoice, ReconSummary } from "@/lib/api";
 import { reviewStatus } from "@/components/ui/status-pill";
 import { useBatch } from "@/lib/store/batch";
 
@@ -28,6 +28,28 @@ export function useExtract() {
         );
       }
     },
+  });
+}
+
+/** Import GSTR-2A workbook rows as purchase vouchers into the session batch. */
+export function useImportGstr2a() {
+  const add = useBatch((s) => s.add);
+  return useMutation({
+    mutationFn: (files: File[]) => api.importGstr2a(files),
+    onSuccess: (invoices, files) => {
+      add(invoices, files);
+      toast.success(
+        `${invoices.length} GSTR-2A row${invoices.length === 1 ? "" : "s"} imported`
+      );
+    },
+  });
+}
+
+/** Reconcile the session's books invoices against imported GSTR-2A rows. */
+export function useReconcile() {
+  return useMutation({
+    mutationFn: (invoices: Invoice[]) =>
+      api.reconcile(invoices) as Promise<ReconSummary>,
   });
 }
 

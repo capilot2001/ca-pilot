@@ -6,6 +6,7 @@ import {
   FilePlus2,
   FileText,
   LogOut,
+  Scale,
   Search,
   Settings,
   Trash2,
@@ -47,6 +48,12 @@ export function CommandPalette() {
         label: "New invoice",
         icon: FilePlus2,
         run: () => router.push("/invoices/new"),
+      },
+      {
+        id: "reconcile",
+        label: "Go to Reconcile",
+        icon: Scale,
+        run: () => router.push("/reconcile"),
       },
       {
         id: "settings",
