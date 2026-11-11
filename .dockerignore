@@ -1,0 +1,28 @@
+# Keep the server image lean and reproducible. The build context is the repo
+# root; everything the image does NOT need is excluded here.
+.git/
+.gitignore
+
+# caches / bytecode
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# local data + secrets (SQLite is a mounted volume, never baked in)
+data/
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+
+# not part of the server image
+client/
+docs/
+assets/
+deploy/
+TODO.local.md
+*.md
+conftest.py
+pyproject.toml
