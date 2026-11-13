@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * LedgerFlow design tokens — sampled from the reference dashboard.
+ * Light theme only for now (the reference is light).
+ * ------------------------------------------------------------------ */
+:root {
+  /* surfaces + neutrals */
+  --canvas: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f7f8f8;
+  --border: #e8eaed;
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --muted-2: #9ca3af;
+
+  /* brand (deep emerald green) */
+  --brand: #16653f;
+  --brand-hover: #125235;
+  --brand-fg: #ffffff;
+  --brand-subtle: #e9f3ec;
+  --brand-subtle-fg: #16653f;
+  --ring: #16653f;
+
+  /* status */
+  --success-fg: #0f7a46;
+  --success-bg: #e7f5ec;
+  --warning-fg: #9a6700;
+  --warning-bg: #fdf3e3;
+  --danger-fg: #c0362c;
+  --danger-bg: #fcecea;
+  --info-fg: #6d28d9;
+  --info-bg: #f2ecfd;
+
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-fg: var(--brand-fg);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-brand-subtle-fg: var(--brand-subtle-fg);
+  --color-ring: var(--ring);
+
+  --color-success-fg: var(--success-fg);
+  --color-success-bg: var(--success-bg);
+  --color-warning-fg: var(--warning-fg);
+  --color-warning-bg: var(--warning-bg);
+  --color-danger-fg: var(--danger-fg);
+  --color-danger-bg: var(--danger-bg);
+  --color-info-fg: var(--info-fg);
+  --color-info-bg: var(--info-bg);
+
+  --radius-lg: var(--radius);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--fg);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* number columns (amounts) use tabular figures so ₹ values line up */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
